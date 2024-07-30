@@ -24,8 +24,8 @@ function set_default_variables {
         source $PREFERENCES_FILE
     else
         echo "Preferences file not found."
+        DEFAULT_INSTALL_ROOT=/opt
         # DEFAULT_HOSTNAME=$HOSTNAME
-        # DEFAULT_INSTALL_ROOT=/opt
         # DEFAULT_HTTP_PROXY=$http_proxy
         # DEFAULT_OPENRVDAS_REPO=https://github.com/oceandatatools/openrvdas
         # DEFAULT_OPENRVDAS_BRANCH=master
@@ -51,7 +51,6 @@ function set_default_variables {
 ###########################################################################
 # Remove the OpenRVDAS installation
 function remove_openrvdas {
-    echo REMOVE FROM $DEFAULT_INSTALL_ROOT/openrvdas
     if [ -d $DEFAULT_INSTALL_ROOT/openrvdas ]; then
         echo "Removing OpenRVDAS directory..."
         sudo rm -rf $DEFAULT_INSTALL_ROOT/openrvdas
