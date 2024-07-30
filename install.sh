@@ -13,7 +13,7 @@ git checkout tags/${RELEASE_TAG}
 
 
 # Run its installer script
-./utils/install_openrvdas.sh
+cd $INSTALL_ROOT/utils && ./install_openrvdas.sh
 
     
 # With the virtualenv activated, pip install a release tag of your script from GitHub
