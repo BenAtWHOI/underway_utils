@@ -23,8 +23,28 @@ function set_default_variables {
         echo "Reading pre-saved defaults from $PREFERENCES_FILE"
         source $PREFERENCES_FILE
     else
-        echo "Preferences file not found. Exiting."
-        exit_gracefully
+        echo "Preferences file not found."
+        # DEFAULT_HOSTNAME=$HOSTNAME
+        # DEFAULT_INSTALL_ROOT=/opt
+        # DEFAULT_HTTP_PROXY=$http_proxy
+        # DEFAULT_OPENRVDAS_REPO=https://github.com/oceandatatools/openrvdas
+        # DEFAULT_OPENRVDAS_BRANCH=master
+        # DEFAULT_NONSSL_SERVER_PORT=80
+        # DEFAULT_SSL_SERVER_PORT=443
+        # DEFAULT_RVDAS_USER=rvdas
+        # DEFAULT_INSTALL_FIREWALLD=no
+        # DEFAULT_OPENRVDAS_AUTOSTART=yes
+        # DEFAULT_INSTALL_SIMULATE_NBP=no
+        # DEFAULT_RUN_SIMULATE_NBP=no
+        # DEFAULT_SUPERVISORD_WEBINTERFACE=no
+        # DEFAULT_SUPERVISORD_WEBINTERFACE_AUTH=no
+        # DEFAULT_SUPERVISORD_WEBINTERFACE_PORT=9001
+        # DEFAULT_INSTALL_GUI=yes
+        # DEFAULT_USE_SSL=no
+        # DEFAULT_HAVE_SSL_CERTIFICATE=no
+        # DEFAULT_SSL_CRT_LOCATION=
+        # DEFAULT_SSL_KEY_LOCATION=
+        # DEFAULT_INSTALL_DOC_MARKDOWN=no
     fi
 }
 
