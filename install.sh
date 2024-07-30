@@ -4,7 +4,7 @@
 
 
 # Download and unpack an OpenRVDAS release
-INSTALL_ROOT="/opt
+INSTALL_ROOT="/opt"
 
 
 RELEASE_TAG="v1.10.2"
