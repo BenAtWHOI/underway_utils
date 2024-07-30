@@ -4,12 +4,11 @@
 
 
 # Download and unpack an OpenRVDAS release
-INSTALL_ROOT="/opt/"
-cd $INSTALL_ROOT
+INSTALL_ROOT="/home/befo/Desktop/WHOI/underway/underway_utils/tmp"
+
 
 RELEASE_TAG="v1.10.2"
-apt-get install git
-git clone https://github.com/OceanDataTools/openrvdas/tags
+cd $INSTALL_ROOT && git clone https://github.com/OceanDataTools/openrvdas
 git checkout tags/${RELEASE_TAG}
 
 
