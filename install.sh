@@ -4,7 +4,7 @@
 
 
 # Download and unpack an OpenRVDAS release
-INSTALL_ROOT="/home/befo/Desktop/WHOI/underway/underway_utils/tmp"
+INSTALL_ROOT="/opt
 
 
 RELEASE_TAG="v1.10.2"
