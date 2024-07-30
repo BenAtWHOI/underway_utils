@@ -15,9 +15,7 @@ cd $INSTALL_ROOT/openrvdas/utils && ./install_openrvdas.sh
 
     
 # With the virtualenv activated, pip install a release tag of your script from GitHub
-# VENV_PATH=$INSTALL_ROOT/openrvdas/venv
-# . $VENV_PATH/bin/activate
-
-echo "export PYTHONPATH=$INSTALL_ROOT/openrvdas:$PYTHONPATH"
-
+echo "export PYTHONPATH=$INSTALL_ROOT/openrvdas:$PYTHONPATH" >> $VENV_PATH/bin/activate
+VENV_PATH=$INSTALL_ROOT/openrvdas/venv
+. $VENV_PATH/bin/activate
 pip install git+https://github.com/BenAtWHOI/underway_rvdas
