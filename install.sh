@@ -8,13 +8,13 @@ WHOI_IMPLEMENTATION_RELEASE_TAG="v0.2.3"
 
 # Download an OpenRVDAS release
 cd $INSTALL_ROOT && git clone https://github.com/OceanDataTools/openrvdas
-# cd $INSTALL_ROOT/openrvdas && git checkout tags/${OPENRVDAS_RELEASE_TAG}
 
 # In the install script directory, generate a preferences file with the version of OpenRVDAS we want
-cd $INSTALL_ROOT/openrvdas/utils && echo "DEFAULT_OPENRVDAS_BRANCH=tags/$OPENRVDAS_RELEASE_TAG" > ".install_openrvdas_preferences"
+# cd $INSTALL_ROOT/openrvdas/utils && echo "DEFAULT_OPENRVDAS_BRANCH=tags/$OPENRVDAS_RELEASE_TAG" > ".install_openrvdas_preferences"
 
-# Run install script for 
+# Run install script for openrvdas and checkout the tag
 cd $INSTALL_ROOT/openrvdas/utils && ./install_openrvdas.sh
+cd $INSTALL_ROOT/openrvdas && git checkout tags/${OPENRVDAS_RELEASE_TAG}
 
 # With the virtualenv activated, pip install a release tag of the WHOI implementation
 . $VENV_PATH/bin/activate && pip install git+https://github.com/BenAtWHOI/underway_rvdas@$WHOI_IMPLEMENTATION_RELEASE_TAG
