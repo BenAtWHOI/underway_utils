@@ -6,6 +6,9 @@ WHOI_IMPLEMENTATION_RELEASE_TAG="v0.2.3"
 # Uninstall any existing OpenRVDAS installation (does not remove rvdas user)
 ./uninstall_openrvdas.sh
 
+# Generate a preferences file to install the version of OpenRVDAS we want
+echo "DEFAULT_OPENRVDAS_BRANCH=$OPENRVDAS_RELEASE_TAG" > ".install_openrvdas_preferences"
+
 # Download an OpenRVDAS release and run install script
 cd $INSTALL_ROOT && git clone https://github.com/OceanDataTools/openrvdas
 git checkout tags/${OPENRVDAS_RELEASE_TAG}
@@ -17,6 +20,6 @@ echo "export PYTHONPATH=\"$PYTHONPATH:$INSTALL_ROOT/openrvdas\"" >> "$VENV_PATH/
 
 # Prompt to activate venv
 echo
-echo "To run underway_rvdas, execute the following commands:"
+echo "To run the underway data monitor, execute the following commands:"
 echo " . $VENV_PATH/bin/activate"
 echo " underway_rvdas <configuration options>"
