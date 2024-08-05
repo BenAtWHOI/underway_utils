@@ -145,7 +145,7 @@ function remove_nginx_uwsgi {
 ###########################################################################
 # Remove SSL certificates if they are self-signed
 function remove_ssl_certificate {
-    if [ $USE_SSL == "yes" ] && [ $HAVE_SSL_CERTIFICATE == 'no' ]; then
+    if [[ $USE_SSL == "yes" ]] && [[ $HAVE_SSL_CERTIFICATE == 'no' ]]; then
         echo "Removing SSL certificates..."
         sudo rm -f $SSL_CRT_LOCATION $SSL_KEY_LOCATION
     fi
@@ -161,7 +161,7 @@ function remove_python_packages {
 ###########################################################################
 # Remove markdown rendering setup
 function remove_markdown {
-    if [ $INSTALL_DOC_MARKDOWN == 'yes' ]; then
+    if [[ $INSTALL_DOC_MARKDOWN == 'yes' ]]; then
         echo "Removing Strapdown.js..."
         sudo rm -rf ${INSTALL_ROOT}/openrvdas/static/Strapdown.js
     fi
