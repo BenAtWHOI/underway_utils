@@ -8,10 +8,10 @@ WHOI_IMPLEMENTATION_RELEASE_TAG="v0.2.3"
 
 # Download an OpenRVDAS release
 cd $INSTALL_ROOT && git clone https://github.com/OceanDataTools/openrvdas
-cd $INSTALL_ROOT/openrvdas && git checkout tags/${OPENRVDAS_RELEASE_TAG}
+# cd $INSTALL_ROOT/openrvdas && git checkout tags/${OPENRVDAS_RELEASE_TAG}
 
 # In the install script directory, generate a preferences file with the version of OpenRVDAS we want
-cd $INSTALL_ROOT/openrvdas/utils && echo "DEFAULT_OPENRVDAS_BRANCH=$OPENRVDAS_RELEASE_TAG" > ".install_openrvdas_preferences"
+cd $INSTALL_ROOT/openrvdas/utils && echo "DEFAULT_OPENRVDAS_BRANCH=tags/$OPENRVDAS_RELEASE_TAG" > ".install_openrvdas_preferences"
 
 # Run install script for 
 cd $INSTALL_ROOT/openrvdas/utils && ./install_openrvdas.sh
