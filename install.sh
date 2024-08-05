@@ -12,8 +12,7 @@ git checkout tags/${OPENRVDAS_RELEASE_TAG}
 cd $INSTALL_ROOT/openrvdas/utils && ./install_openrvdas.sh
 
 # With the virtualenv activated, pip install a release tag of the WHOI implementation
-. $VENV_PATH/bin/activate
-PYTHONPATH=$PYTHONPATH pip install git+https://github.com/BenAtWHOI/underway_rvdas@$WHOI_IMPLEMENTATION_RELEASE_TAG
+. $VENV_PATH/bin/activate && pip install git+https://github.com/BenAtWHOI/underway_rvdas@$WHOI_IMPLEMENTATION_RELEASE_TAG
 echo "export PYTHONPATH=\"$PYTHONPATH:$INSTALL_ROOT/openrvdas\"" >> "$VENV_PATH/bin/activate"
 
 # Prompt to activate venv
