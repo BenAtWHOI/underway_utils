@@ -6,13 +6,8 @@ WHOI_IMPLEMENTATION_RELEASE_TAG="v0.2.3"
 # Uninstall any existing OpenRVDAS installation (does not remove rvdas user)
 ./uninstall_openrvdas.sh
 
-# Download an OpenRVDAS release
+# Download an OpenRVDAS release, run the install script, and checkout the tag
 cd $INSTALL_ROOT && git clone https://github.com/OceanDataTools/openrvdas
-
-# In the install script directory, generate a preferences file with the version of OpenRVDAS we want
-# cd $INSTALL_ROOT/openrvdas/utils && echo "DEFAULT_OPENRVDAS_BRANCH=tags/$OPENRVDAS_RELEASE_TAG" > ".install_openrvdas_preferences"
-
-# Run install script for openrvdas and checkout the tag
 cd $INSTALL_ROOT/openrvdas/utils && ./install_openrvdas.sh
 cd $INSTALL_ROOT/openrvdas && git checkout tags/${OPENRVDAS_RELEASE_TAG}
 
