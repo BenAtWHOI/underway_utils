@@ -2,6 +2,9 @@
 
 source .env
 
+echo "Shutting down already running feeder scripts"
+cd $TEST_FEEDER_SCRIPTS_PATH && ./shutdown.sh
+
 echo "Loading virtual environment"
 source $TEST_VENV_ACTIVATE_PATH
 
