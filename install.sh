@@ -1,3 +1,5 @@
+#!/bin/bash
+
 INSTALL_ROOT="/opt"
 VENV_PATH=$INSTALL_ROOT/openrvdas/venv
 OPENRVDAS_RELEASE_TAG="v1.10.2"
