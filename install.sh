@@ -1,9 +1,6 @@
 #!/bin/bash
 
-INSTALL_ROOT="/opt"
-VENV_PATH=$INSTALL_ROOT/openrvdas/venv
-OPENRVDAS_RELEASE_TAG="v1.10.2"
-WHOI_IMPLEMENTATION_RELEASE_TAG="v0.2.3"
+source .env
 
 # Uninstall any existing OpenRVDAS installation (does not remove rvdas user)
 ./uninstall_openrvdas.sh
