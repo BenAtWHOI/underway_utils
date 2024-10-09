@@ -75,7 +75,7 @@ function set_default_variables {
 ###########################################################################
 # Remove the OpenRVDAS installation
 function remove_openrvdas {
-    yes_no "Remove install root? " y
+    yes_no "Remove install root? " yes
     REMOVE_INSTALL_ROOT=$YES_NO_RESULT
 
     if [ "$REMOVE_INSTALL_ROOT" == "yes" ]; then
@@ -91,7 +91,7 @@ function remove_openrvdas {
 ###########################################################################
 # Remove the user created for OpenRVDAS
 function remove_user {
-    yes_no "Remove OpenRVDAS user? " y
+    yes_no "Remove OpenRVDAS user? " yes
     REMOVE_USER=$YES_NO_RESULT
 
     if [ "$REMOVE_USER" == "yes" ]; then
@@ -107,7 +107,7 @@ function remove_user {
 ###########################################################################
 # Remove the firewall configuration (CentOS/RHEL only)
 function remove_firewall {
-    yes_no "Remove firewall configuration? " y
+    yes_no "Remove firewall configuration? " yes
     REMOVE_FIREWALL_CONFIGURATION=$YES_NO_RESULT
 
     if [ "$REMOVE_USER" == "yes" ]; then
@@ -135,7 +135,7 @@ function remove_firewall {
 ###########################################################################
 # Remove the supervisor configuration and stop services
 function remove_supervisor {
-    yes_no "Remove supervisor? " y
+    yes_no "Remove supervisor? " yes
     REMOVE_SUPERVISOR=$YES_NO_RESULT
 
     if [ "$REMOVE_SUPERVISOR" == "yes" ]; then
@@ -169,7 +169,7 @@ function remove_supervisor {
 ###########################################################################
 # Remove the NGINX and UWSGI configuration
 function remove_nginx_uwsgi {
-    yes_no "Remove supervisor? " y
+    yes_no "Remove supervisor? " yes
     REMOVE_SUPERVISOR=$YES_NO_RESULT
 
     if [ "$REMOVE_SUPERVISOR" == "yes" ]; then
@@ -194,7 +194,7 @@ function remove_nginx_uwsgi {
 ###########################################################################
 # Remove SSL certificates if they are self-signed
 function remove_ssl_certificate {
-    yes_no "Remove ssl certificate? " y
+    yes_no "Remove ssl certificate? " yes
     REMOVE_SSL_CERTIFICATE=$YES_NO_RESULT
 
     if [ "$REMOVE_SSL_CERTIFICATE" == "yes" ]; then
@@ -208,7 +208,7 @@ function remove_ssl_certificate {
 ###########################################################################
 # Remove virtual environment and Python packages
 function remove_python_packages {
-    yes_no "Remove python packages? " y
+    yes_no "Remove python packages? " yes
     REMOVE_PYTHON_PACKAGES=$YES_NO_RESULT
 
     if [ "$REMOVE_PYTHON_PACKAGES" == "yes" ]; then
@@ -220,7 +220,7 @@ function remove_python_packages {
 ###########################################################################
 # Remove markdown rendering setup
 function remove_markdown {
-    yes_no "Remove markdown? " y
+    yes_no "Remove markdown? " yes
     REMOVE_MARKDOWN=$YES_NO_RESULT
 
     if [ "$REMOVE_MARKDOWN" == "yes" ]; then
@@ -234,7 +234,7 @@ function remove_markdown {
 ###########################################################################
 # Remove log and tmp directories
 function remove_logs_and_tmp {
-    yes_no "Remove log and temporary directories? " y
+    yes_no "Remove log and temporary directories? " yes
     REMOVE_LOG_TMP=$YES_NO_RESULT
 
     if [ "$REMOVE_LOG_TMP" == "yes" ]; then
