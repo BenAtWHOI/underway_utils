@@ -107,11 +107,11 @@ function remove_user {
 ###########################################################################
 # Remove the firewall configuration (CentOS/RHEL only)
 function remove_firewall {
-    yes_no "Remove firewall configuration? " yes
-    REMOVE_FIREWALL_CONFIGURATION=$YES_NO_RESULT
+    if [ $OS_TYPE == 'CentOS' ]; then
+        yes_no "Remove firewall configuration? " yes
+        REMOVE_FIREWALL_CONFIGURATION=$YES_NO_RESULT
 
-    if [ "$REMOVE_USER" == "yes" ]; then
-        if [ $OS_TYPE == 'CentOS' ]; then
+        if [ "$REMOVE_FIREWALL_CONFIGURATION" == "yes" ]; then
             echo "Removing firewall configuration..."
             firewall-cmd -q --permanent --remove-port=${SERVER_PORT}/tcp > /dev/null || echo "No such port ${SERVER_PORT}"
             if [ "$SUPERVISORD_WEBINTERFACE" == 'yes' ]; then
@@ -169,11 +169,11 @@ function remove_supervisor {
 ###########################################################################
 # Remove the NGINX and UWSGI configuration
 function remove_nginx_uwsgi {
-    yes_no "Remove supervisor? " yes
-    REMOVE_SUPERVISOR=$YES_NO_RESULT
+    if [[ "$INSTALL_GUI" == "yes" ]]; then
+        yes_no "Remove supervisor? " yes
+        REMOVE_SUPERVISOR=$YES_NO_RESULT
 
-    if [ "$REMOVE_SUPERVISOR" == "yes" ]; then
-        if [[ "$INSTALL_GUI" == "yes" ]]; then
+        if [ "$REMOVE_SUPERVISOR" == "yes" ]; then
             echo "Removing NGINX and UWSGI configuration..."
             if [ $OS_TYPE == 'MacOS' ]; then
                 ETC_HOME=/usr/local/etc
@@ -220,11 +220,11 @@ function remove_python_packages {
 ###########################################################################
 # Remove markdown rendering setup
 function remove_markdown {
-    yes_no "Remove markdown? " yes
-    REMOVE_MARKDOWN=$YES_NO_RESULT
+    if [[ $INSTALL_DOC_MARKDOWN == 'yes' ]]; then
+        yes_no "Remove markdown? " yes
+        REMOVE_MARKDOWN=$YES_NO_RESULT
 
-    if [ "$REMOVE_MARKDOWN" == "yes" ]; then
-        if [[ $INSTALL_DOC_MARKDOWN == 'yes' ]]; then
+        if [ "$REMOVE_MARKDOWN" == "yes" ]; then
             echo "Removing Strapdown.js..."
             sudo rm -rf ${INSTALL_ROOT}/openrvdas/static/Strapdown.js
         fi
