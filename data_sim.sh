@@ -1,5 +1,7 @@
 #!/bin/bash
 
-source .env
+# Activate virtual environment
+source /opt/openrvdas/venv/bin/activate
 
-cd $OPENRVDAS_PATH/logger/utils && python3 simulate_data.py --config $SIM_DATA_CONFIG_FILE
+# Simulate data
+cd /opt/openrvdas/logger/utils && python3 simulate_data.py --config /home/befo/Desktop/WHOI/underway/underway_utils/data_sim_config.yaml &
